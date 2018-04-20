@@ -2,6 +2,7 @@ package fr.eservices.drive.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +16,9 @@ public class Order {
     Date createdOn;
     Date deliveryDate;
     int amount;
+    @ManyToMany
     List<Article> articles;
     Status currentStatus;
+    @ManyToMany
     List<StatusHistory> history;
 }
