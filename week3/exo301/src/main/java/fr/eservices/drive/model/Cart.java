@@ -1,5 +1,10 @@
 package fr.eservices.drive.model;
 
-public class Cart {
+import java.util.Date;
+import java.util.List;
 
+public class Cart {
+    int id;
+    Date createOn;
+    List<Article> articles;
 }

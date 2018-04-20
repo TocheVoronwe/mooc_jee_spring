@@ -1,5 +1,5 @@
 package fr.eservices.drive.model;
 
-public class Product {
+public class Product extends  Article {
 
 }

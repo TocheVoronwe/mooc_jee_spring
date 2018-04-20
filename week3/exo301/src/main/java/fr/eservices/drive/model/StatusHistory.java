@@ -1,5 +1,9 @@
 package fr.eservices.drive.model;
 
-public class StatusHistory {
+import java.util.Date;
 
+public class StatusHistory {
+    int id;
+    Date statusDate;
+    Status status;
 }
