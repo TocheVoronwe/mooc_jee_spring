@@ -1,8 +1,6 @@
 package fr.eservices.drive.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "article")
@@ -14,5 +12,6 @@ public class Article {
     float vat;
     String name;
     int img;
+    @ManyToOne
     Category category;
 }
