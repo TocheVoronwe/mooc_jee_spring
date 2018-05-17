@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import fr.eservices.drive.model.Article;
@@ -27,18 +28,21 @@ public class CatalogDaoJPAImpl implements CatalogDao {
 	}
 
 	@Override
-	public List<Category> getArticleCategories(int id) {
+	public List<Category> getArticleCategories(int id) throws DataException{
 		// TODO Auto-generated method stub
-		System.out.println("before getArticleCategories");
-		List<Category> categories = em.createQuery("select categories from Article", Category.class).getResultList();
-		System.out.println("after getArticleCategories");
-		return categories;
+		Article article = em.find(Article.class, id);
+		if (article == null)
+			throw new DataException("Nope");
+		return article.getCategories();
 	}
 
 	@Override
 	public List<Article> getCategoryContent(int categoryId) {
 		System.out.println("before getCategoryContent");
-		List<Article> articles = em.createQuery("from Article where Article.categories.id = :id", Article.class).getResultList();
+		Query query = em.createQuery("from Article join Category on Category.id = :id", Article.class);
+		query.setParameter("id", categoryId);
+		List<Article> articles = query.getResultList();
+
 		System.out.println("after getCategoryContent");
 		return articles;
 	}
