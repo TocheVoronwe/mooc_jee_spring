@@ -7,18 +7,25 @@
              
 <persistence-unit name="myApp">
 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+  <class>fr.eservices.drive.model.Status</class>
+  <class>fr.eservices.drive.model.Article</class>
+  <class>fr.eservices.drive.model.Category</class>
+  <class>fr.eservices.drive.model.Order</class>
+  <class>fr.eservices.drive.model.Perishable</class>
+  <class>fr.eservices.drive.model.Product</class>
+  <class>fr.eservices.drive.model.StatusHistory</class>
+  <class>fr.eservices.drive.model.Customer</class>
 <properties>
 
   <property name="javax.persistence.jdbc.driver"  value="org.h2.Driver"/>
   <!-- TODO: Change file location to your H2 database ! -->
   <property name="javax.persistence.jdbc.url"     
-     value="jdbc:h2:"/>
+     value="jdbc:h2:./db"/>
   
   <property name="hibernate.dialect"        value="org.hibernate.dialect.H2Dialect"/>
   <property name="hibernate.hbm2ddl.auto"   value="update"/>
   <property name="hibernate.show_sql"       value="true"/>
-  
+
 </properties>
 </persistence-unit>
-
 </persistence>
