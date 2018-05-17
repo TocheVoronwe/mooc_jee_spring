@@ -1,6 +1,7 @@
 package fr.eservices.drive.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "article")
@@ -8,7 +9,7 @@ public class Article {
     @Id
     @GeneratedValue
     int id;
-    String ean13;
+    String ean;
     float price;
     float vat;
     String name;
@@ -22,12 +23,12 @@ public class Article {
         this.id = id;
     }
 
-    public String getEan13() {
-        return ean13;
+    public String getEan() {
+        return ean;
     }
 
-    public void setEan13(String ean13) {
-        this.ean13 = ean13;
+    public void setEan(String ean13) {
+        this.ean = ean13;
     }
 
     public float getPrice() {
@@ -62,16 +63,16 @@ public class Article {
         this.img = img;
     }
 
-    public Category getCategory() {
-        return category;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategories(List<Category> category) {
+        this.categories = category;
     }
 
-    @ManyToOne
-    Category category;
+    @ManyToMany
+    List<Category> categories;
 
 
 }

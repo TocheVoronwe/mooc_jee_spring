@@ -10,7 +10,8 @@ public class Cart {
     @Id
     @GeneratedValue
     int id;
-    Date createOn;
+    @Temporal(TemporalType.DATE)
+    Date createdOn;
 
     public int getId() {
         return id;
@@ -20,12 +21,12 @@ public class Cart {
         this.id = id;
     }
 
-    public Date getCreateOn() {
-        return createOn;
+    public Date getCreatedOn() {
+        return createdOn;
     }
 
-    public void setCreateOn(Date createOn) {
-        this.createOn = createOn;
+    public void setCreatedOn(Date createOn) {
+        this.createdOn = createOn;
     }
 
     public List<Article> getArticles() {
@@ -36,6 +37,8 @@ public class Cart {
         this.articles = articles;
     }
 
-    @ManyToMany
+    @OneToMany
     List<Article> articles;
+    @ManyToOne()
+    Customer customer;
 }

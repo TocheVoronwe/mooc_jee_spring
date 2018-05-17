@@ -1,8 +1,6 @@
 package fr.eservices.drive.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -35,6 +33,9 @@ public class StatusHistory {
     @Id
 
     int id;
+    @Temporal(TemporalType.DATE)
     Date statusDate;
     Status status;
+    @ManyToOne
+    Customer customer;
 }

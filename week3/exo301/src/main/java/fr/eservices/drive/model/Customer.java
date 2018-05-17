@@ -11,6 +11,7 @@ public class Customer {
     String firstName;
     String lastName;
     String email;
+    String login;
 
     public int getId() {
         return id;

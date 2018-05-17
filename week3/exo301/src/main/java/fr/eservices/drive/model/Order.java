@@ -11,10 +11,12 @@ public class Order {
     @Id
     @GeneratedValue
     int id;
+    @Temporal(TemporalType.DATE)
     Date createdOn;
+    @Temporal(TemporalType.DATE)
     Date deliveryDate;
     int amount;
-    @ManyToMany
+    @OneToMany
     List<Article> articles;
     Status currentStatus;
 
@@ -76,4 +78,6 @@ public class Order {
 
     @ManyToMany
     List<StatusHistory> history;
+    @ManyToOne
+    Customer customer;
 }

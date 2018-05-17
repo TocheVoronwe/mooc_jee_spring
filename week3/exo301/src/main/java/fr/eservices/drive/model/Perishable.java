@@ -1,13 +1,12 @@
 package fr.eservices.drive.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Perishable extends Article{
+    @Temporal(TemporalType.DATE)
     Date bestBefore;
     String lot;
 
