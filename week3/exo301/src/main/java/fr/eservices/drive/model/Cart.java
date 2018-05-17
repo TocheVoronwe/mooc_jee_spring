@@ -1,9 +1,14 @@
 package fr.eservices.drive.model;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "cart")
 public class Cart {
+    @Id
+    @GeneratedValue
     int id;
     Date createOn;
 
@@ -31,5 +36,6 @@ public class Cart {
         this.articles = articles;
     }
 
+    @ManyToMany
     List<Article> articles;
 }

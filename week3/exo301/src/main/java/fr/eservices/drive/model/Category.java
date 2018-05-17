@@ -1,6 +1,7 @@
 package fr.eservices.drive.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "category")
 public class Category {
     @Id
+    @GeneratedValue
     int id;
     String name;
     int orderIdx;

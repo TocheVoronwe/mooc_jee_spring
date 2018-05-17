@@ -1,0 +1,48 @@
+2018-05-17 10:15:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+create table order (id integer not null, amount integer not null, createdOn timestamp, currentStatus integer, deliveryDate timestamp, primary key (id)) [42001-197]
+2018-05-17 10:15:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_article add constraint FKp17rd0rld3m38fq45d7ee4ebh foreign key (Order_id) references order [42001-197]
+2018-05-17 10:15:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_status_history add constraint FK5q1mrc1ej80dxuqkhr73od2wd foreign key (Order_id) references order [42001-197]
+2018-05-17 10:18:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+create table order (id integer not null, amount integer not null, createdOn timestamp, currentStatus integer, deliveryDate timestamp, primary key (id)) [42001-197]
+2018-05-17 10:18:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_article add constraint FKp17rd0rld3m38fq45d7ee4ebh foreign key (Order_id) references order [42001-197]
+2018-05-17 10:18:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_status_history add constraint FK5q1mrc1ej80dxuqkhr73od2wd foreign key (Order_id) references order [42001-197]
+2018-05-17 10:38:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+create table order (id integer not null, amount integer not null, createdOn timestamp, currentStatus integer, deliveryDate timestamp, primary key (id)) [42001-197]
+2018-05-17 10:38:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_article add constraint FKp17rd0rld3m38fq45d7ee4ebh foreign key (Order_id) references order [42001-197]
+2018-05-17 10:38:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_status_history add constraint FK5q1mrc1ej80dxuqkhr73od2wd foreign key (Order_id) references order [42001-197]
+2018-05-17 10:38:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+create table order (id integer not null, amount integer not null, createdOn timestamp, currentStatus integer, deliveryDate timestamp, primary key (id)) [42001-197]
+2018-05-17 10:38:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_article add constraint FKp17rd0rld3m38fq45d7ee4ebh foreign key (Order_id) references order [42001-197]
+2018-05-17 10:38:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Erreur de syntaxe dans linstruction SQL {0}; attendu {1}
+Syntax error in SQL statement {0}; expected {1}; SQL statement:
+alter table order_status_history add constraint FK5q1mrc1ej80dxuqkhr73od2wd foreign key (Order_id) references order [42001-197]

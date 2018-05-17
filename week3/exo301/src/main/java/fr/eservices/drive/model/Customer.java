@@ -1,6 +1,15 @@
 package fr.eservices.drive.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customer")
 public class Customer {
+    @Id
+    @GeneratedValue
     int id;
     String firstName;
     String lastName;

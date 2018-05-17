@@ -1,9 +1,6 @@
 package fr.eservices.drive.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +9,7 @@ import java.util.List;
 
 public class Order {
     @Id
+    @GeneratedValue
     int id;
     Date createdOn;
     Date deliveryDate;
