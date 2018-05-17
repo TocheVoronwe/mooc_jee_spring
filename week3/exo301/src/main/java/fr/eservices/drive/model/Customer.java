@@ -1,9 +1,6 @@
 package fr.eservices.drive.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
@@ -64,5 +61,6 @@ public class Customer {
     }
 
     String password;
+    @OneToOne
     Cart activeCart;
 }

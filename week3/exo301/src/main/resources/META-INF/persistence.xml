@@ -21,7 +21,7 @@
 			<property name="javax.persistence.jdbc.driver"  value="org.h2.Driver"/>
 			<!-- TODO: Change file location to your H2 database ! -->
 			<property name="javax.persistence.jdbc.url"
-					  value="jdbc:h2:./test-db"/>
+					  value="jdbc:h2:./db"/>
 
 			<property name="hibernate.dialect"        value="org.hibernate.dialect.H2Dialect"/>
 			<property name="hibernate.hbm2ddl.auto"   value="update"/>

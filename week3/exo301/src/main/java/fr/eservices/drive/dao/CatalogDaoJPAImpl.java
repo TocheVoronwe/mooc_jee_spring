@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 import fr.eservices.drive.model.Article;
 import fr.eservices.drive.model.Category;
 import fr.eservices.drive.model.Perishable;
+import org.hibernate.annotations.Parameter;
 
 public class CatalogDaoJPAImpl implements CatalogDao {
 	EntityManager em;
@@ -19,26 +20,33 @@ public class CatalogDaoJPAImpl implements CatalogDao {
 
 	@Override
 	public List<Category> getCategories() {
-		TypedQuery<Category> q = em.createQuery("select c from Category c", Category.class);
-		throw new RuntimeException("Not yet implemented");
+		System.out.println("before getCategories");
+		List<Category> categories = em.createQuery("from Category order by orderIdx", Category.class).getResultList();
+		System.out.println("after getCategories");
+		return categories;
 	}
 
 	@Override
 	public List<Category> getArticleCategories(int id) {
 		// TODO Auto-generated method stub
-		throw new RuntimeException("Not yet implemented");
+		System.out.println("before getArticleCategories");
+		List<Category> categories = em.createQuery("select category from Article", Category.class).getResultList();
+		System.out.println("after getArticleCategories");
+		return categories;
 	}
 
 	@Override
 	public List<Article> getCategoryContent(int categoryId) {
-		// TODO Auto-generated method stub
-		throw new RuntimeException("Not yet implemented");
+		System.out.println("before getCategoryContent");
+		List<Article> articles = em.createQuery("from Article where Article.category.id = :id", Article.class).getResultList();
+		System.out.println("after getCategoryContent");
+		return articles;
 	}
 
 	@Override
 	public List<Perishable> getPerished(Date day) {
-		// TODO Auto-generated method stub
-		throw new RuntimeException("Not yet implemented");
+		List<Perishable> perishables = em.createQuery("from Perishable  where Perishable.bestBefore < :day", Perishable.class).getResultList();
+		return perishables;
 	}
 
 	
