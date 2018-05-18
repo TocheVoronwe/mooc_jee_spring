@@ -1,7 +1,10 @@
 package fr.eservices.drive.app;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.persistence.EntityManager;
 
@@ -14,8 +17,9 @@ public class SpringConfig {
 
 	// expose this as a bean for spring context
 	// expose an entity manager for DAO using JPA
+	@Bean
 	EntityManager entityManager() {
-		return null;
+		return entityManager();
 	}
 	
 
