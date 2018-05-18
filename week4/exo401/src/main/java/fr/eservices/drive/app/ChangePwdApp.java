@@ -4,13 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import fr.eservices.drive.dao.IUserDao;
 import fr.eservices.drive.model.User;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+@Configuration
+@Component
 public class ChangePwdApp {
-	
+	@Autowired
 	IUserDao userDao;
 
 	public ChangePwdApp() {

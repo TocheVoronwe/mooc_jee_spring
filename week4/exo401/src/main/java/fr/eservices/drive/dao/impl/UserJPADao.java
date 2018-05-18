@@ -6,9 +6,12 @@ import javax.persistence.Persistence;
 
 import fr.eservices.drive.dao.UserDao;
 import fr.eservices.drive.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserJPADao extends UserDao {
-	
+	@Autowired
 	EntityManager em;
 	
 	@Override

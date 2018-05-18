@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="
-           http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="" class="">
-		<property name="" ref=""/>
-	</bean>
-
+    <bean id="HmacChecker" class="fr.eservices.drive.util.HmacChecker"></bean>
+    <bean id="MD5Checker" class="fr.eservices.drive.util.MD5Checker"></bean>
+    <bean id="ChangePwdApp" class="fr.eservices.drive.app.ChangePwdApp">
+        <property name="userDao" value="fr.eservices.drive.dao.impl.UserJDBCDao"></property>
+    </bean>
+    <bean id="DriverManager" class="java.sql.DriverManager"></bean>
+    <bean id="UserJDBCDao" class="fr.eservices.drive.dao.impl.UserJDBCDao"></bean>
 </beans>

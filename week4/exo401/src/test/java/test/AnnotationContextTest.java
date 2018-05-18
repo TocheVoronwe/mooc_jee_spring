@@ -27,7 +27,7 @@ public class AnnotationContextTest {
 	
 	@Test
 	public void testComponentAnnotations() {
-		
+
 		for (Class<?> k : Arrays.asList(ChangePwdApp.class, UserJPADao.class, HmacChecker.class, MD5Checker.class) )
 			Assert.assertNotNull(
 				"Class " + k.getName() + " should be a Component", 
