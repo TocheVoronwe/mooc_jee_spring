@@ -13,7 +13,7 @@ public class Article {
     float price;
     float vat;
     String name;
-    int img;
+    String img;
 
     public int getId() {
         return id;
@@ -55,11 +55,11 @@ public class Article {
         this.name = name;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
