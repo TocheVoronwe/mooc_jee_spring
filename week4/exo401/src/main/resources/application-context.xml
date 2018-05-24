@@ -5,10 +5,19 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="HmacChecker" class="fr.eservices.drive.util.HmacChecker"></bean>
+
+
     <bean id="MD5Checker" class="fr.eservices.drive.util.MD5Checker"></bean>
     <bean id="ChangePwdApp" class="fr.eservices.drive.app.ChangePwdApp">
-        <property name="userDao" value="fr.eservices.drive.dao.impl.UserJDBCDao"></property>
+        <property name="userDao" ref="UserJDBCDao"></property>
     </bean>
-    <bean id="DriverManager" class="java.sql.DriverManager"></bean>
-    <bean id="UserJDBCDao" class="fr.eservices.drive.dao.impl.UserJDBCDao"></bean>
+
+    <bean id="UserJDBCDao" class="fr.eservices.drive.dao.impl.UserJDBCDao" destroy-method="">
+        <property name="connection" ref="DriverManager"></property>
+        <property name="pwdCheck" ref="MD5Checker"></property>
+    </bean>
+    <bean id="DriverManager" class="java.sql.DriverManager" factory-method="getConnection">
+        <constructor-arg><value type="java.lang.String">jdbc:h2:./db</value></constructor-arg>
+    </bean>
+
 </beans>

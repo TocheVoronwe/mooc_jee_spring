@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 import fr.eservices.drive.dao.UserDao;
 import fr.eservices.drive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component

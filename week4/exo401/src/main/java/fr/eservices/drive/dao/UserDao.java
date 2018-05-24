@@ -4,6 +4,7 @@ import fr.eservices.drive.model.User;
 import fr.eservices.drive.util.PasswordChecker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 public abstract class UserDao implements IUserDao {
     @Autowired
