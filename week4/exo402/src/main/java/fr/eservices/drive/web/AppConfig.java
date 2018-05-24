@@ -4,14 +4,23 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import fr.eservices.drive.dao.CatalogMockDao;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 // set this class as a "Configuration" component to contribute to spring context
 // enable spring web mvc
 // scan packages for component and controllers
+@Configuration
+@EnableWebMvc
+@ComponentScan("fr.eservices.drive.web")
 public class AppConfig implements WebApplicationInitializer {
 	
 	@Override
@@ -24,10 +33,11 @@ public class AppConfig implements WebApplicationInitializer {
 	}
 	
 	// expose this as a Bean for spring context
+    @Bean
 	public ViewResolver viewResolver() {
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver("/WEB-INF/views", ".jsp");
 		// create and configure an InternalResourceViewResolver
-		
-		throw new RuntimeException("Not yet implemented");
+		return internalResourceViewResolver;
 	}
 
 }

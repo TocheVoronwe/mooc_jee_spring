@@ -1,14 +1,13 @@
 package fr.eservices.drive.dao.impl;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import fr.eservices.drive.dao.UserDao;
 import fr.eservices.drive.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 @Component
 public class UserJPADao extends UserDao {
@@ -32,7 +31,7 @@ public class UserJPADao extends UserDao {
 			.setParameter("PWD", password)
 			.executeUpdate();
 	}
-	
+
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("myApp");
 		UserJPADao dao = new UserJPADao();

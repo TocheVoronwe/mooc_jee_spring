@@ -12,11 +12,11 @@
         <property name="userDao" ref="UserJDBCDao"></property>
     </bean>
 
-    <bean id="UserJDBCDao" class="fr.eservices.drive.dao.impl.UserJDBCDao" destroy-method="">
+    <bean id="UserJDBCDao" class="fr.eservices.drive.dao.impl.UserJDBCDao" destroy-method="getConnection">
         <property name="connection" ref="DriverManager"></property>
         <property name="pwdCheck" ref="MD5Checker"></property>
     </bean>
-    <bean id="DriverManager" class="java.sql.DriverManager" factory-method="getConnection">
+    <bean id="DriverManager" class="java.sql.DriverManager" factory-method="getConnection" destroy-method="close">
         <constructor-arg><value type="java.lang.String">jdbc:h2:./db</value></constructor-arg>
     </bean>
 
