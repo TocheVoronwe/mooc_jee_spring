@@ -3,6 +3,7 @@ package fr.eservices.drive.web;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
 
+import fr.eservices.drive.model.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -48,11 +49,14 @@ public class CartController {
 	
 	@GetMapping(path="/{id}.html", produces="text/html")
 	public String getCart(@PathVariable(name="id") int id, Model model) throws DataException {
+		if (id <= 0)
+			throw new DataException("Id should be a real one");
+		Cart cart = daoCart.getCartContent(id);
+		model.addAttribute("cart", cart);
+		return "_cart_header";
 		// get cart from dao
 		// assign to model var "cart"
 		// return view name to display content of /WEB-INF/views/_cart_header.jsp
-
-		return "";
 	}
 
 	@ResponseBody
