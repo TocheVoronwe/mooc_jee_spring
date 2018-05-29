@@ -52,5 +52,48 @@
 
   </dependencies>
 
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <webappDirectory>${project.build.directory}/${project.build.finalName}-patched</webappDirectory>
+                </configuration>
+                <executions>
+                    <!-- Execute pendant la phase "package" -->
+                    <execution>
+                        <id>package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+
+                        <configuration>
+                            <warSourceDirectory>${project.build.directory}/${project.build.finalName}-patched</warSourceDirectory>
+                            <warName>${project.build.finalName}</warName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <!-- Le nom du serveur doit correspondre a celui configure dans ~.m2/settings.xml -->
+                    <server>TomcatServer</server>
+                    <!-- Le chemin doit correspondre a l'URL de l'application sur le serveur -->
+                    <path>/exo402</path>
+                    <warFile>${project.build.directory}/${project.build.finalName}.war</warFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 

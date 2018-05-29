@@ -33,7 +33,7 @@ public class CatalogController {
         // return the view name
         model.addAttribute("categories", categories);
         System.err.println("model == " + model.toString());
-        return "categories.jsp";
+        return "categories";
 /*        throw new RuntimeException("Not yet implemented");*/
     }
 
@@ -48,7 +48,7 @@ public class CatalogController {
         model.addAttribute("articles", articles);
         // add articles to model
         // return the view name
-        return "category.jsp";
+        return "category";
 /*        throw new RuntimeException("Not yet implemented");*/
     }
 
