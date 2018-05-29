@@ -6,12 +6,12 @@
 <li>
 	<a href="#">
 		<span class="price">
-			<%-- show price as X,XX --%> &euro;</span>
+			<%-- show price as X,XX --%> ${article.price}&euro;</span>
 		<%-- 
 			show product image, you can use 'https://static1.chronodrive.com'
 			as base URL and img path to complete the image URL 
 		--%>
-		<img src="IMG.gif"/><br/>
+		<img src="https://static1.chronodrive.com/${article.img}"/><br/>
 		<%-- show product name --%> <br/>
 	</a>
 </li>
