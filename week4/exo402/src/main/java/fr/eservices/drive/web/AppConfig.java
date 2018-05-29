@@ -20,7 +20,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 // scan packages for component and controllers
 @Configuration
 @EnableWebMvc
-@ComponentScan("fr.eservices.drive.web")
+@ComponentScan(basePackages = {"fr.eservices.drive.web", "fr.eservices.drive.dao"})
 public class AppConfig implements WebApplicationInitializer {
 	
 	@Override
