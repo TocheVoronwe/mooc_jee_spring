@@ -19,7 +19,7 @@ $(function() {
 	});
 	
 	$.ajax({
-		url: "cart/-1.html"
+		url: "cart/1.html"
 	}).done(function(data){
 		JSON.stringify( $('#cartInHeader').html(data) )
 	});

@@ -63,7 +63,12 @@ public class CartController {
 	@PostMapping(path="/{id}/add.json",consumes="application/json")
 	public SimpleResponse add(@PathVariable(name="id") int id, @RequestBody CartEntry art) {
 		SimpleResponse res = new SimpleResponse();
-		
+
+		Cart cart = new Cart();
+		//daoCart.store(id, art);
+		/*Cart cart = daoCart.getCartContent(id);
+		cart.setArticles(art.getId());*/
+
 		/*
 		System.out.println(
 			"********************\n"

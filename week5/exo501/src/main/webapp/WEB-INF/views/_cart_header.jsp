@@ -1,11 +1,13 @@
 <pre>
-Panier
+PanierTest-
 
-* article 1
+    <ul class="articles"></ul>
+    <c:forEach items="${articles}" var="item">
 
-* article 2
-
-* article 3
-
+    <li>
+        <p><output>${article.nom}</output></p>
+        <p>${article.prix} €</p>
+    </li>
+    </c:forEach>
 </pre>
-<a class="btn btn-primary" href="cart/1/validate.html">Commander</a>
+<a class="btn btn-primary" href="cart/1/validate.html">Commander</a
