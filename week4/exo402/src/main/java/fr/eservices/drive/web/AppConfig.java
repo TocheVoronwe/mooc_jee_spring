@@ -35,7 +35,7 @@ public class AppConfig implements WebApplicationInitializer {
 	// expose this as a Bean for spring context
     @Bean
 	public ViewResolver viewResolver() {
-        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver("/WEB-INF/views", ".jsp");
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
 		// create and configure an InternalResourceViewResolver
 		return internalResourceViewResolver;
 	}

@@ -7,23 +7,27 @@ import fr.eservices.drive.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 
 // set as a Controller
 // map to an url starting with "/catalog"
-@Controller()
+@Controller
 @RequestMapping(path="/catalog")
 public class CatalogController {
 
     // Inject this with spring
     @Autowired
     CatalogDao dao;
+
+    @RequestMapping(path="/test")
+    public String plop()
+    {
+        return "Plop";
+    }
 
     // Map this method to "categories.html"
     @RequestMapping(path="/categories.html")
