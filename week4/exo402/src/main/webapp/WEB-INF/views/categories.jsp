@@ -13,7 +13,7 @@
                         Category images are located in /img/ and name catID.jpg (ID as 2 digits)
                      --%>
                 <img src="../img/cat${String.format("%02d", Integer.parseInt(c.id))}.jpg"/><br/>
-                        <label><c:out value="${c.name}"></c:out></label>
+                        <c:out value="${c.name}"></c:out>
                     <%-- Show category name --%>
             </a>
         </li>

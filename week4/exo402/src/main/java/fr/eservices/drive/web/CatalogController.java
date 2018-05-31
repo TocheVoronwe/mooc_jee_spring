@@ -42,7 +42,7 @@ public class CatalogController {
     }
 
     // Map this method to "category/ID_CATEGORY.html"
-    @RequestMapping(path="/category/{id}/.html")
+    @RequestMapping(path="/category/{id}.html")
     public String categoryContent(Model model,
                                   @PathVariable("id")
                                   // Inject this parameter from url variable
