@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.eservices.drive.repository.OrderRepository;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(path="/order")
 public class OrderController {
@@ -20,12 +22,14 @@ public class OrderController {
 	
 	@RequestMapping(path="/ofCustomer/{custId}.html")
 	public String list(@PathVariable String custId, Model model) {
+		List<Order> orders = repoOrder.findByCustomerIdOrderByCreatedOnDesc(custId);
+		model.addAttribute("orders", orders);
         //Order order = repoOrder;
 		// use repo to get orders of a customer
 		// assign in model as "orders"
 		// return order list view
 		
-		return "";
+		return "order_list";
 	}
 
 }

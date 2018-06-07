@@ -1,19 +1,28 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<pre>
-PanierTest
-    <ul class="articles"></ul>
-    <c:choose>
-        <c:when test="${articles.length == 0}">
-            aucun article
-        </c:when>
-        <c:when test="${articles.length > 0}">
-            <c:forEach items="${articles}" var="item">
-            <li>
-                <p><output>${article.nom}</output></p>
-                <p>${article.prix} €</p>
-            </li>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%@ include file="_header.jsp" %>
+<%--<pre>--%>
+
+<c:choose>
+    <%-- Pas d'articles --%>
+    <c:when test="${empty cart.articles}">
+        Aucun article
+    </c:when>
+    <%-- Il y a des articles --%>
+    <c:otherwise>
+        <ul>
+            <c:forEach items="${cart.articles}" var="a">
+                <li>
+                        ${a.name}
+                    <fmt:formatNumber value="${a.price / 100}" type="currency" />
+                </li>
             </c:forEach>
-        </c:when>
-    </c:choose>
-</pre>
+        </ul>
+    </c:otherwise>
+</c:choose>
+
+<%--</pre>--%>
+
 <a class="btn btn-primary" href="cart/1/validate.html">Commander</a>

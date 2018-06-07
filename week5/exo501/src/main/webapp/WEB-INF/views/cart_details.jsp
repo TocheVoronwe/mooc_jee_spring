@@ -1,6 +1,6 @@
 <%@include file="_header.jsp" %>
 
-<h1>Détails panier</h1>
+<h1>Dï¿½tails panier</h1>
 
 
 <%@include file="_footer.jsp" %>
