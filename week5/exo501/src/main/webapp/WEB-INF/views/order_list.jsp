@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="_header.jsp" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <h1>Liste des commandes</h1>
 
